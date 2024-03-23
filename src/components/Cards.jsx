@@ -37,8 +37,8 @@ const CardContent = styled(Box)`
 
 const Title = styled(Typography)`
     margin: 0;
-    font-size: 35px;
-    font-weight: 200px;
+    font-size: 38px;
+    font-weight: 1000px;
 `;
 
 const Description = styled(Typography)`
@@ -64,13 +64,15 @@ const Link = styled("a")`
 
 function Cards({ component, src, alt, title, href, description }) {
   return (
-    <Card component={component}>
-        <CardImage src={src} alt={alt} />
-        <CardContent component="div">
-            <Title><Link href={href} target="_blank">{title}</Link></Title>
-            <Description>{description}</Description>
-        </CardContent>
-    </Card>
+    <Link href={href} target="_blank">
+        <Card component={component}>
+            <CardImage src={src} alt={alt} />
+            <CardContent component="div">
+                <Title>{title}</Title>
+                <Description>{description}</Description>
+            </CardContent>
+        </Card>
+    </Link>
   )
 }
 
