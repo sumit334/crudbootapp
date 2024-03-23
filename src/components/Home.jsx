@@ -4,6 +4,7 @@ import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import {collegeseek,sharevault,hireharbour,epiclouge,passgenius,weatherapp,chatspace,connecthub,portfolio,dragonace,crudbootapp} from "../web_images/allimages";
+import Cards from './Cards';
 
 const Top = styled(Box)`
     display: flex;
@@ -19,68 +20,6 @@ const CardContainer = styled(Box)`
     margin: 0 auto;
 `;
 
-const Card = styled(Box)`
-    max-width: 350px;
-    border-radius: 10px;
-    overflow: hidden;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
-    margin: 0 10px;
-    transition: transform 0.3s ease;
-    cursor: pointer;
-
-    &:hover {
-        transform: scale(1.15);
-        box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.3);
-    }
-`;
-
-
-
-const CardImage = styled("img")`
-    width: 100%;
-    height: 300px;
-    object-fit: cover;
-    &:hover {
-      transform: scale(1.20);
-      box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.3);
-  }
-`;
-
-const CardContent = styled(Box)`
-    padding: 20px;
-    background-color: #f9f9f9;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-`;
-
-const Title = styled(Typography)`
-    margin: 0;
-    font-size: 35px;
-    font-weight: 200px;
-`;
-
-const Description = styled(Typography)`
-    margin: 10px 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-`;
-
-const Link = styled("a")`
-    display: block;
-    text-decoration: none;
-    color: #333;
-    font-weight: bold;
-    transition: color 0.3s ease;
-
-    &:hover {
-        color: #000;
-    }
-`;
-
 const CarouselWrapper = styled(Box)`
   .slick-prev {
     left: -80px;
@@ -89,7 +28,6 @@ const CarouselWrapper = styled(Box)`
     right: -80px;
   }
 `;
-
 
 function Home() {
     const settings = {
@@ -135,83 +73,103 @@ function Home() {
             <CardContainer>
                 <CarouselWrapper>
                     <Slider {...settings}>
-                        <Card component="div">
-                            <CardImage src={collegeseek} alt="CollegeSeek" />
-                            <CardContent component="div">
-                                <Title><Link href="https://sumitscollegeseek.netlify.app/" target="_blank">CollegeSeek</Link></Title>
-                                <Description>A MERN Stack Application for Posting and Group Discussions</Description>
-                            </CardContent>
-                        </Card>
-                        <Card component="div">
-                            <CardImage src={sharevault} alt="ShareVault" />
-                            <CardContent>
-                                <Title><Link href="https://sumitsharevault.netlify.app/" target="_blank">ShareVault</Link></Title>
-                                <Description>A MERN Stack Application for File Uploading and Accessing</Description>
-                            </CardContent>
-                        </Card>
-                        <Card component="div">
-                            <CardImage src={crudbootapp} alt="CrudBootApp" />
-                            <CardContent component="div">
-                                <Title><Link href="https://sumitscrudbootapp.netlify.app/" target="_blank">CrudBootApp</Link></Title>
-                                <Description>A ReactJS,MongoDB and Spring Boot Application for CRUD Operations</Description>
-                            </CardContent>
-                        </Card>
-                        <Card component="div">
-                            <CardImage src={epiclouge} alt="EpicLogue" />
-                            <CardContent>
-                                <Title><Link href="https://sumitsepiclogue.netlify.app/" target="_blank">EpicLogue</Link></Title>
-                                <Description>A React JS Application also uses Appwrite for backend to post blogs</Description>
-                            </CardContent>
-                        </Card>
-                        <Card component="div">
-                            <CardImage src={hireharbour} alt="HireHarbor" />
-                            <CardContent>
-                                <Title><Link href="https://sumitshireharbor.netlify.app/" target="_blank">HireHarbor</Link></Title>
-                                <Description>A MERN Stack Application for Job Listing and Posting</Description>
-                            </CardContent>
-                        </Card>
-                        <Card component="div">
-                            <CardImage src={passgenius} alt="PassGenius" />
-                            <CardContent>
-                                <Title><Link href="https://sumitspassgenius.netlify.app" target="_blank">PassGenius</Link></Title>
-                                <Description>A React JS Application for Generating Passwords</Description>
-                            </CardContent>
-                        </Card>
-                        <Card component="div">
-                          <CardImage src={weatherapp} alt="WeatherApp" />
-                          <CardContent>
-                              <Title><Link href="https://weatherappwithwapi.netlify.app/" target="_blank">WeatherApp</Link></Title>
-                              <Description>A React JS weather application made using OpenWeatherApi</Description>
-                          </CardContent>
-                      </Card>
-                      <Card component="div">
-                          <CardImage src={chatspace} alt="ChatSpace" />
-                          <CardContent>
-                              <Title><Link href="https://sumitonlineapp.netlify.app/" target="_blank">ChatSpace</Link></Title>
-                              <Description>A simple chating application made using Node JS and Socket io</Description>
-                          </CardContent>
-                      </Card>
-                      <Card component="div">
-                        <CardImage src={connecthub} alt="ConnectHub" />
-                        <CardContent>
-                            <Title><Link href="https://sumitsconnecthub.netlify.app" target="_blank">ConnectHub</Link></Title>
-                            <Description>A React JS Application for making a Video Calls</Description>
-                        </CardContent>
-                    </Card>
-                    <Card component="div">
-                      <CardImage src={portfolio} alt="Portfoliofolio" />
-                      <CardContent>
-                        <Title><Link href="https://sumitsportfolioweb.netlify.app/" target="_blank">Portfolio</Link></Title>
-                        <Description>A simple Portfolio Website made using HTML</Description>
-                      </CardContent>
-                    </Card>
-                    <Card component="div">
-                      <CardImage src={dragonace} alt="DragonAce" />
-                      <CardContent>
-                        <Title><Link href="https://sumitdragonagegame.netlify.app/" target="_blank">DragonAce</Link></Title>
-                        <Description>A simple Web Game made using HTML,CSS and JS</Description>
-                      </CardContent>
-                    </Card>
+                        <Cards 
+                          src={collegeseek}
+                          alt="CollegeSeek"
+                          title="CollegeSeek"
+                          href="https://sumitscollegeseek.netlify.app/"
+                          description="A MERN Stack Application for Posting and Group Discussions"
+                        />
+                        <Cards
+                            component="div"
+                            src={sharevault}
+                            alt="ShareVault"
+                            title="ShareVault"
+                            href="https://sumitsharevault.netlify.app/"
+                            description="A MERN Stack Application for File Uploading and Accessing"
+                        />
+
+                        <Cards
+                            component="div"
+                            src={crudbootapp}
+                            alt="CrudBootApp"
+                            title="CrudBootApp"
+                            href="https://sumitscrudbootapp.netlify.app/"
+                            description="A ReactJS, MongoDB and Spring Boot Application for CRUD Operations"
+                        />
+
+                        <Cards
+                            component="div"
+                            src={epiclouge}
+                            alt="EpicLogue"
+                            title="EpicLogue"
+                            href="https://sumitsepiclogue.netlify.app/"
+                            description="A React JS Application also uses Appwrite for backend to post blogs"
+                        />
+
+                        <Cards
+                            component="div"
+                            src={hireharbour}
+                            alt="HireHarbor"
+                            title="HireHarbor"
+                            href="https://sumitshireharbor.netlify.app/"
+                            description="A MERN Stack Application for Job Listing and Posting"
+                        />
+
+                        <Cards
+                            component="div"
+                            src={passgenius}
+                            alt="PassGenius"
+                            title="PassGenius"
+                            href="https://sumitspassgenius.netlify.app"
+                            description="A React JS Application for Generating Passwords"
+                        />
+
+                        <Cards
+                            component="div"
+                            src={weatherapp}
+                            alt="WeatherApp"
+                            title="WeatherApp"
+                            href="https://weatherappwithwapi.netlify.app/"
+                            description="A React JS weather application made using OpenWeatherApi"
+                        />
+
+                        <Cards
+                            component="div"
+                            src={chatspace}
+                            alt="ChatSpace"
+                            title="ChatSpace"
+                            href="https://sumitonlineapp.netlify.app/"
+                            description="A simple chating application made using Node JS and Socket io"
+                        />
+
+                        <Cards
+                            component="div"
+                            src={connecthub}
+                            alt="ConnectHub"
+                            title="ConnectHub"
+                            href="https://sumitsconnecthub.netlify.app"
+                            description="A React JS Application for making a Video Calls"
+                        />
+
+                        <Cards
+                            component="div"
+                            src={portfolio}
+                            alt="Portfoliofolio"
+                            title="Portfolio"
+                            href="https://sumitsportfolioweb.netlify.app/"
+                            description="A simple Portfolio Website made using HTML"
+                        />
+
+                        <Cards
+                            component="div"
+                            src={dragonace}
+                            alt="DragonAce"
+                            title="DragonAce"
+                            href="https://sumitdragonagegame.netlify.app/"
+                            description="A simple Web Game made using HTML, CSS and JS"
+                        />
+
                     </Slider>
                 </CarouselWrapper>
             </CardContainer>

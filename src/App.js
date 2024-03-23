@@ -16,7 +16,7 @@ function App() {
         <Route path="/all" element={<AllUsers />} />
         <Route path="/add" element={<AddUser />} />
         <Route path="/edit/:id" element={<EditUser />} />
-        <Route element={<NotFound />} />
+        <Route path="/*" element={<NotFound />} />
       </Routes>
     </BrowserRouter>
   );

@@ -49,7 +49,7 @@ const EditUser = () => {
     }
 
     const onValueChange = (e) => {
-        console.log(e.target.value);
+        // console.log(e.target.value);
         setUser({...user, [e.target.name]: e.target.value})
     }
 
